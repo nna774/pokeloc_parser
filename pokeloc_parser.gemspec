@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kugayama Nana"]
   spec.email         = ["nonamea774@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{get information from Kyoto city bus location system}
+  spec.description   = %q{get information from Kyoto city bus location system}
   spec.homepage      = "https://github.com/nna774/pokeloc_parser"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
@@ -24,4 +24,6 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "nokogiri", ">= 1.10"
 end

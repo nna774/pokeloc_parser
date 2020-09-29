@@ -1,6 +1,5 @@
-require "pokeloc_parser/version"
+require 'pokeloc_parser/parser'
+require 'pokeloc_parser/version'
 
 module PokelocParser
-  class Error < StandardError; end
-  # Your code goes here...
 end
