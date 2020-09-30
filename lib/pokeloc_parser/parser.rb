@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 
 module PokelocParser
   def get(id:)
@@ -48,6 +49,13 @@ module PokelocParser
     def initialize
       @numbers = []
     end
+
+    def to_h
+      { station: station, got_at: got_at, numbers: numbers.map(&:to_h) }
+    end
+    def to_json
+      to_h.to_json
+    end
   end
 
   class NumberResult
@@ -57,6 +65,18 @@ module PokelocParser
       @number = number
       @destination = destination
       @statuses = statuses
+    end
+
+    def to_h
+      {
+        approaching: approaching,
+        number: number,
+        destination: destination,
+        statuses: statuses,
+      }
+    end
+    def to_json
+      to_h.to_json
     end
   end
 end
