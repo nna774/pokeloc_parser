@@ -26,11 +26,12 @@ module PokelocParser
         number = get_alt(div.at_css('.bls-keito-num-img'))
         destination = div.at_css('.bls-dest').content
         statuses = div.css('.busimg').map(&method(:get_alt))
-        @result.numbers << NumberResult.new(approaching: approaching,
-                                            number: number,
-                                            destination: destination,
-                                            statuses: statuses,
-                                           )
+        @result.numbers << NumberResult.new(
+          approaching: approaching,
+          number: number,
+          destination: destination,
+          statuses: statuses,
+        )
       end
       @result
     end
