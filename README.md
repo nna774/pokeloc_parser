@@ -1,8 +1,6 @@
 # PokelocParser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pokeloc_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Get bus information from [京都市バス携帯型バスロケシステム 【ポケロケ】](http://www2.city.kyoto.lg.jp/kotsu/blssmart/index.html).
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. set your information from [ポケロケ](http://blsetup.city.kyoto.jp/blsp/). And you will get URI like `http://blsetup.city.kyoto.jp/blsp/show.php?sid=36428bad4f799a90e5d2be7fbfe99c4c`
+2. use the parameter `sid` as id
+3. call `PokelocParser.get`
+
+```
+irb(main):001:0> d = PokelocParser.get id: '36428bad4f799a90e5d2be7fbfe99c4c'
+irb(main):002:0> d
+=> #<PokelocParser::Result:0x00007fffedbf18d8 @numbers=[#<PokelocParser::NumberResult:0x00007fffedbe7608 @approaching="接近中のバスがあります。", @number="206", @destination="東山通・北大路BT", @statuses=["バス運行中（この停留所から2つ前までの区間）", "バス運行中（2つ前から4つ前までの区間）", ""]>, #<PokelocParser::NumberResult:0x00007fffedbe5060 @approaching="接近するバスはありません。", @number="4", @destination="四条河原町・上賀茂神社", @statuses=["", "", ""]>, #<PokelocParser::NumberResult:0x00007fffedbe2a90 @approaching="接近中のバスがあります。", @number="特33", @destination="桂駅東口・洛西BT", @statuses=["", "", "バス運行中（4つ前から6つ前までの区間）"]>], @station="京都駅前", @got_at="10:07">
+```
 
 ## Development
 
