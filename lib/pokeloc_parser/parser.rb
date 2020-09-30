@@ -2,10 +2,10 @@ require 'nokogiri'
 require 'open-uri'
 
 module PokelocParser
-  def parse(id:)
+  def get(id:)
     Parser.new(id: id).parse
   end
-  module_function :parse
+  module_function :get
 
   class Parser
     def initialize(id:)
